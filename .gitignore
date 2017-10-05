@@ -1,0 +1,34 @@
+
+#system files
+Thumbs.db
+ehthumbs.db
+
+# dotfiles
+.brackets*
+.vscode
+.DS_Store
+.tern-port
+.nyc_output
+
+# node related things
+.cache/
+.node-gyp/
+
+
+# ignore dependecies
+bower_components
+node_modules
+
+# istanbul coverage reports
+coverage
+
+# documentation
+docs
+
+
+# ignore misc files
+**/reports/**
+**/logs/**
+*.log
+notes.md
+

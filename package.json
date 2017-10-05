@@ -1,0 +1,44 @@
+{
+  "name": "chigai-api",
+  "version": "1.0.0",
+  "description": "Chigai: modern visual regression testing. API module.",
+  "main": "./app/main.js",
+  "author": "Martin Krause",
+  "license": "MIT",
+  "keywords": [
+    "visual",
+    "regression",
+    "testing",
+    "ci",
+    "continious integration",
+    "bdd",
+    "tdd",
+    "mocha",
+    "chai",
+    "node",
+    "puppeteer",
+    "css regression"
+  ],
+  "scripts": {
+    "mocha": "./node_modules/mocha/bin/mocha",
+    "nyc": "./node_modules/.bin/nyc --clean ./node_modules/.bin/mocha",
+    "coverage": "./node_modules/.bin/nyc check-coverage --lines 100 --functions 100 --branches 100 --statements 100",
+    "report": "./node_modules/.bin/nyc report --reporter=lcov --reporter=html",
+    "test": "yarn nyc && yarn report && yarn coverage"
+  },
+  "dependencies": {
+    "chigai-core": "<2.0.0"
+  },
+  "devDependencies": {
+    "chigai-mock-server": "<2.0.0",
+    "chai": "4.1.1",
+    "eslint": "4.4.1",
+    "istanbul": "0.4.5",
+    "jsdoc": "^3.5.4",
+    "loke-jsdoc-theme": "^2.1.0",
+    "mocha": "3.5.0",
+    "nyc": "^11.2.1",
+    "sinon": "^4.0.0",
+    "sinon-chai": "^2.13.0"
+  }
+}
