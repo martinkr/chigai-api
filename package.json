@@ -1,9 +1,12 @@
 {
   "name": "chigai-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Chigai: modern visual regression testing. API module.",
   "main": "./app/main.js",
-  "engines" : { "node" : ">=8.5.5", "yarn":"latest" },
+  "engines": {
+    "node": ">=8.5.5",
+    "yarn": "latest"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/martinkr/chigai-api"
