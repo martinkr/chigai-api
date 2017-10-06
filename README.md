@@ -43,7 +43,7 @@ describe("Perform regression on my page.", () => {
 - ```blink-diff v^1.0.1```
 - ```fs-extra-plus v0.1.3```
 - ```puppeteer v0.11.0```
-- 100% code coverage using ```mocha v3.5.2```, ```chai v4.1.2``` and```nyc v11.2.1``,
+- 100% code coverage using ```mocha v3.5.2```, ```chai v4.1.2``` and ```nyc v11.2.1```,
 
 ## Resources
 - [GoogleChrome/puppeteer - Headless Chrome Node API](https://github.com/GoogleChrome/puppeteer)
