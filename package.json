@@ -4,8 +4,7 @@
   "description": "Chigai: modern visual regression testing. API module.",
   "main": "./app/main.js",
   "engines": {
-    "node": ">=8.5.5",
-    "yarn": "latest"
+    "node": ">=8.5.5"
   },
   "repository": {
     "type": "git",
