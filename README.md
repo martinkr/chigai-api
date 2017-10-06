@@ -36,7 +36,7 @@ describe("Perform regression on my page.", () => {
 
 # Create a fresh reference on the CLI
 ```$ chigai reference http://example.com -w 1200 -h 800 -t 0.01```
-
+```$ ./node-modules/.bin/chigai reference http://example.com -w 1200 -h 800 -t 0.01```
 
 # Tech Stack
 - ECMAScript 2018 on ```nodejs v8.5.0```
