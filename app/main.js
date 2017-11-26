@@ -45,6 +45,7 @@ const _assert = async (uri, options) => {
 	}
 
 	// move this to a plugin!
+	/* istanbul ignore next */
 	if (Array.isArray(result) && result.length === 1 && console && typeof(console.log) === "function") {
 		console.log(`\n`);
 		console.log(`[chigai] Failed for ${result[0].uri}!`);
