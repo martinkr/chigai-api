@@ -87,8 +87,8 @@ describe(`The module \"chigai-api\"`, () => {
 
 		it("should return \"true\" if the regression item is the same as the reference item", (async () => {
 			let result;
-			result = await thisModule(uriStatic);
-			result = await thisModule(uriStatic);
+			result = await thisModule(uriStatic, {"path": "../myscreenshots"});
+			result = await thisModule(uriStatic,{"path": "../myscreenshots"});
 			result.should.be.ok;
 		}));
 

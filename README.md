@@ -17,6 +17,21 @@ Chigai-api is designed to be used with your favourite testrunner.
 ## Regression testing
 Provide a url and options such as the viewport width (default: 1024), viewport height (default: 720) or a threshold (default: 0.01 = 1%) for the image comparison. Chigai-api creates a new screenshot of the whole page and compares it to the last specified reference. If their difference is lower than the given threshold it will resolve with ```true``, otherwise ```false```
 
+## .chigai.json
+You can store project wide setttings in this file. It takes the same key-value-pairs as the options-object. Plus an additional ```path``` property.
+### path
+There's the possiblitly to pass a custom path to chigai. It's relative to your working directory.
+Use this to share your reference items (e.g. via source control, rsync ...).
+
+```JavaScript
+{
+	"path" : "./myscreenshots",
+	"threshold": 0.5,
+	"vw": 1200,
+	"vh" : 800
+}
+```
+
 # Installation
 ```$ yarn add chigai-api chigai-cli```
 

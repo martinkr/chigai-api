@@ -34,7 +34,6 @@ const chigaiCore = require("chigai-core");
  */
 const _assert = async (uri, options) => {
 	let result;
-
 	try {
 		result = await chigaiCore.regression(uri, options);
 	} catch (error) {
@@ -44,6 +43,16 @@ const _assert = async (uri, options) => {
 	if (Array.isArray(result) && result.length === 1 && result[0].screenshot === true && result[0].match === true) {
 		return true;
 	}
+
+	// move this to a plugin!
+	if (Array.isArray(result) && result.length === 1 && console && typeof(console.log) === "function") {
+		console.log(`\n`);
+		console.log(`[chigai] Failed for ${result[0].uri}!`);
+		console.log(`[chigai] - The actual URI: $ open ${result[0].uri}`);
+		console.log(`[chigai] - The difference: $ open ${result[0].difference_item}`);
+		console.log(`[chigai] - Set as new one:  $ chigai reference ${result[0].uri} -w ${result[0].viewport.width} -h ${result[0].viewport.height} -t ${result[0].threshold}`);
+	}
+
 	// if (Array.isArray(result) && result.length === 1 && result[0].match === false) {
 	return false;
 	// }
