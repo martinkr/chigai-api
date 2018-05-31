@@ -29,7 +29,7 @@ const chigaiCore = require("chigai-core");
  * with chigai-core.
  * @async
  * @param {String} uri the location to test
- * @param {Object} options the options, taken from chigai-core. currently "vw", "vh", "threshold"
+ * @param {Object} options the options, taken from chigai-core. currently "vw", "vh", "threshold", "wait"
  * @return {Boolean} false if the regression failes
  */
 const _assert = async (uri, options) => {
@@ -44,16 +44,6 @@ const _assert = async (uri, options) => {
 		return true;
 	}
 
-	// move this to a plugin!
-	/* istanbul ignore next */
-	if (Array.isArray(result) && result.length === 1 && console && typeof(console.log) === "function") {
-		console.log(`\n`);
-		console.log(`[chigai] Failed for ${result[0].uri}!`);
-		console.log(`[chigai] - The actual URI: $ open ${result[0].uri}`);
-		console.log(`[chigai] - The difference: $ open ${result[0].difference_item}`);
-		console.log(`[chigai] - Set as new one:  $ chigai reference ${result[0].uri} -w ${result[0].viewport.width} -h ${result[0].viewport.height} -t ${result[0].threshold}`);
-	}
-
 	// if (Array.isArray(result) && result.length === 1 && result[0].match === false) {
 	return false;
 	// }
@@ -66,11 +56,10 @@ const _assert = async (uri, options) => {
  * error if there is an error.
  * @async
  * @param {String} uri the location to test
- * @param {Object} options the options, taken from chigai-core. currently "vw", "vh", "threshold"
+ * @param {Object} options the options, taken from chigai-core. currently "vw", "vh", "threshold", "wait"
  * @return {Boolean} false if the regression failes
  */
-module.exports = async(uri, options = {}) => {
+module.exports = async (uri, options = {}) => {
 	let result = await _assert(uri, options);
 	return result;
 };
-
